@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\Study\\2 Курс\\ПППІ\\lab1\\lab4\\lab4\\lab4.csproj": {}
+    "D:\\Study\\2 Курс\\ПППІ\\lab2\\lab4\\lab4\\lab4.csproj": {}
   },
   "projects": {
-    "d:\\Study\\2 Курс\\ПППІ\\lab1\\lab4\\lab4\\lab4.csproj": {
+    "D:\\Study\\2 Курс\\ПППІ\\lab2\\lab4\\lab4\\lab4.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\Study\\2 Курс\\ПППІ\\lab1\\lab4\\lab4\\lab4.csproj",
+        "projectUniqueName": "D:\\Study\\2 Курс\\ПППІ\\lab2\\lab4\\lab4\\lab4.csproj",
         "projectName": "lab4",
-        "projectPath": "d:\\Study\\2 Курс\\ПППІ\\lab1\\lab4\\lab4\\lab4.csproj",
+        "projectPath": "D:\\Study\\2 Курс\\ПППІ\\lab2\\lab4\\lab4\\lab4.csproj",
         "packagesPath": "C:\\Users\\alexa\\.nuget\\packages\\",
-        "outputPath": "d:\\Study\\2 Курс\\ПППІ\\lab1\\lab4\\lab4\\obj\\",
+        "outputPath": "D:\\Study\\2 Курс\\ПППІ\\lab2\\lab4\\lab4\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\alexa\\AppData\\Roaming\\NuGet\\NuGet.Config",

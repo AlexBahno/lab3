@@ -1,37 +1,69 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace lab4
 {
     class Program
     {
+        static String keyMaker(Magazine mg) {
+            return mg.Name;
+        }
+
         static void Main(string[] args)
         {
-            MagazineCollection localMagazines = new MagazineCollection();
-            localMagazines.Name = "Local Collection";
-            MagazineCollection internationalMagazines = new MagazineCollection();
-            internationalMagazines.Name = "International Collection";
+            MagazineCollection<String> localeCollection = new MagazineCollection<string>(keyMaker);
+            MagazineCollection<String> foreignCollection = new MagazineCollection<string>(keyMaker);
+            localeCollection.Name = "Locale Collection";
+            foreignCollection.Name = "Foreign Collection";
 
-            Listener localColleListener = new Listener();
-            Listener interColleListener = new Listener();
+            Listener localeListener = new Listener();
+            Listener foreignListener = new Listener();
 
-            localMagazines.MagazineAdded += localColleListener.MagazineAdded;
-            localMagazines.MagazineReplaced += localColleListener.MagazineReplaced;
+            localeCollection.MagazinesChanged += localeListener.OnMagazinesChanged;
+            foreignCollection.MagazinesChanged += foreignListener.OnMagazinesChanged;
 
-            internationalMagazines.MagazineAdded += interColleListener.MagazineAdded;
-            internationalMagazines.MagazineReplaced += interColleListener.MagazineReplaced;
+            localeCollection.AddDefaults();
+            foreignCollection.AddDefaults();
 
-            localMagazines.AddDefaults();
-            internationalMagazines.AddDefaults();
+            Magazine localeMagazine = new Magazine("Locale magazine", Frequency.Weekly, new DateTime(), 1000);
+            Magazine foreignMagazine = new Magazine("Foreign magazine", Frequency.Weekly, new DateTime(), 1000);
 
-            localMagazines.Replace(2, new Magazine());
-            internationalMagazines.Replace(3, new Magazine());
+            localeCollection.AddMagazines(localeMagazine);
+            foreignCollection.AddMagazines(foreignMagazine);
 
-            localMagazines[0] = new Magazine();
-            internationalMagazines[0] = new Magazine();
+            localeCollection.ChangeMagazine(localeMagazine);
+            foreignCollection.ChangeMagazine(foreignMagazine);
 
-            System.Console.WriteLine(localColleListener.ToString());
-            System.Console.WriteLine(interColleListener.ToString());
+            Magazine anotherMagazine = new Magazine("Replace Magazine", Frequency.Yearly, new DateTime(), 30);
+            anotherMagazine.AddArticles(new Article(new Person(), "Title", 10));
+
+            localeCollection.Replace(localeMagazine, anotherMagazine);
+            foreignCollection.Replace(foreignMagazine, anotherMagazine);
+
+            localeCollection.ChangeMagazine(localeMagazine);
+            foreignCollection.ChangeMagazine(foreignMagazine);
+
+            System.Console.WriteLine(localeListener);
+            System.Console.WriteLine(foreignListener);
+
+
+            System.Console.WriteLine(localeCollection.MaxRating + "\n");
+            
+            foreach (KeyValuePair<string, Magazine> pair in localeCollection.FrequencyGroup(Frequency.Monthly)) {
+                System.Console.WriteLine("--------------------------------------------------");
+                System.Console.WriteLine(pair.Value);
+                System.Console.WriteLine("--------------------------------------------------");
+            }
+
+            foreach (IGrouping<Frequency, KeyValuePair<string, Magazine>> group in localeCollection.GroupByFrequency) {
+                System.Console.WriteLine("-----------------------------------------------------");
+                System.Console.WriteLine(group.Key);
+                foreach (KeyValuePair<string, Magazine> pair in group) {
+                    System.Console.WriteLine(pair.Value);
+                }
+                System.Console.WriteLine("-----------------------------------------------------");
+            }
         }
     }
 }

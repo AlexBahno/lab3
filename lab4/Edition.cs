@@ -1,16 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace lab4
 {
-    class Edition : IComparable<Edition>, IComparer<Edition>
+    class Edition : IComparable<Edition>, IComparer<Edition>, INotifyPropertyChanged
     {
         protected string name;
         protected DateTime releaseDate;
         protected int amount;
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public Edition()
         {
@@ -35,7 +38,11 @@ namespace lab4
         public DateTime ReleaseDate
         {
             get => releaseDate;
-            set => releaseDate = value;
+            set 
+            {
+                releaseDate = value;
+                OnPropertyChanged(nameof(ReleaseDate));
+            } 
         }
 
         public int Amount
@@ -49,6 +56,7 @@ namespace lab4
                 }
 
                 amount = value;
+                OnPropertyChanged(nameof(Amount));
             }
         }
 
@@ -105,6 +113,11 @@ namespace lab4
                 }
                 return y.Amount.CompareTo(x.Amount);
             }
+        }
+
+        public void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

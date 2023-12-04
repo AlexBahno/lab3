@@ -2,40 +2,44 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace lab4 {
-    class Listener {
-        public List<ListEnrty> changed = new List<ListEnrty>();
+    class Listener 
+    {
+        private List<ListEntry> changed = new List<ListEntry>();
 
-        public void MagazineAdded(object sender, MagazineListHandlerEventArgs e) {
-            ListEnrty listEnrty = new ListEnrty(e.Name, e.TypeOfAction, e.Id);
-            changed.Add(listEnrty);
-        }
-
-        public void MagazineReplaced(object sender, MagazineListHandlerEventArgs e) {
-            ListEnrty listEnrty = new ListEnrty(e.Name, e.TypeOfAction, e.Id);
-            changed.Add(listEnrty);
+        public void OnMagazinesChanged(object sender, MagazinesChangedEventArgs<string> e)
+        {
+            ListEntry entry = new ListEntry(e.CollectionName, e.UpdateType, e.ChangedProperty, e.Key.ToString());
+            changed.Add(entry);
         }
 
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
-            changed.ForEach(le => sb.Append(le.ToString()));
-            return sb.ToString();
+            string result = "List of Changes:\n";
+            foreach (var entry in changed)
+            {
+                result += entry.ToString() + "\n";
+            }
+            return result;
         }
     }
 
-    class ListEnrty {
-        public string Name { get; }
-        public string TypeOfAction { get; }
-        public int Id { get; }
+    class ListEntry 
+    {
+        public string Name {get; set;}
+        public Update Type {get; set;}
+        public string ChangedProperty {get; set;}
+        public string Key {get; set;}
 
-        public ListEnrty(string name, string typeOfAction, int id) {
+        public ListEntry(string name, Update type, string changedProperty, string key) {
             Name = name;
-            TypeOfAction = typeOfAction;
-            Id = id;
+            Type = type;
+            ChangedProperty = changedProperty;
+            Key = key;
         }
 
-        override public string ToString() {
-            return $"Name: {Name}; Type of Action: {TypeOfAction}; Id: {Id}\n";
-        }
+        public override string ToString()
+    {
+        return $"Collection: {Name}, UpdateType: {Type}, ChangedProperty: {ChangedProperty}, Key: {Key}";
+    }
     }
 }

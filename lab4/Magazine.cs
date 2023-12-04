@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ComponentModel;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -29,19 +30,28 @@ namespace lab4
         public Frequency FrequencyOfRelease
         {
             get { return frequency; }
-            set { frequency = value; }
+            set {
+                OnPropertyChanged(nameof(FrequencyOfRelease)); 
+                frequency = value;
+            }
         }
 
         public List<Article> Articles
         {
             get => articles;
-            set => articles = value;
+            set {
+                OnPropertyChanged(nameof(Articles));
+                articles = value; 
+            } 
         }
 
         public List<Person> Authors
         {
             get => authorsList;
-            set => authorsList = value;
+            set {
+                OnPropertyChanged(nameof(Authors));
+                authorsList = value;
+            } 
         }
 
         public double AverageRating
@@ -64,6 +74,7 @@ namespace lab4
                 Name = value.Name;
                 ReleaseDate = value.ReleaseDate;
                 Amount = value.Amount;
+                OnPropertyChanged(nameof(Edition));
             }
         }
 
