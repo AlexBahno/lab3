@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace lab4
 {
+    [Serializable]
     class Article : IRateAndCopy
     {
         public Person Author

@@ -1,0 +1,63 @@
+<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/clr/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <SOAP-ENV:Body>
+    <a1:Magazine id="ref-1" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/lab4/lab4%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+      <frequency>Monthly</frequency>
+      <articles href="#ref-2" />
+      <authorsList href="#ref-3" />
+      <name id="ref-4">New Magazine</name>
+      <releaseDate>2023-01-21T00:00:00.0000000+02:00</releaseDate>
+      <amount>300</amount>
+      <Edition_x002B_name href="#ref-4" />
+      <Edition_x002B_releaseDate>2023-01-21T00:00:00.0000000+02:00</Edition_x002B_releaseDate>
+      <Edition_x002B_amount>300</Edition_x002B_amount>
+      <Edition_x002B_PropertyChanged xsi:null="1" />
+    </a1:Magazine>
+    <a2:_x0030__x002C__x0020_Culture_x003D_neutral_x002C__x0020_PublicKeyToken_x003D_null_x005D__x005D_ id="ref-2" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Collections.Generic.List`1[[lab4.Article%2C%20lab4%2C%20Version%3D1.0.0/System.Private.CoreLib%2C%20Version%3D5.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D7cec85d7bea7798e">
+      <_items href="#ref-5" />
+      <_size>3</_size>
+      <_version>3</_version>
+    </a2:_x0030__x002C__x0020_Culture_x003D_neutral_x002C__x0020_PublicKeyToken_x003D_null_x005D__x005D_>
+    <a3:_x0030__x002C__x0020_Culture_x003D_neutral_x002C__x0020_PublicKeyToken_x003D_null_x005D__x005D_ id="ref-3" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/System.Collections.Generic.List`1[[lab4.Person%2C%20lab4%2C%20Version%3D1.0.0/System.Private.CoreLib%2C%20Version%3D5.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D7cec85d7bea7798e">
+      <_items href="#ref-6" />
+      <_size>0</_size>
+      <_version>0</_version>
+    </a3:_x0030__x002C__x0020_Culture_x003D_neutral_x002C__x0020_PublicKeyToken_x003D_null_x005D__x005D_>
+    <SOAP-ENC:Array id="ref-5" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/lab4/lab4%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull" SOAP-ENC:arrayType="a1:Article[4]">
+      <item href="#ref-7" />
+      <item href="#ref-8" />
+      <item href="#ref-9" />
+    </SOAP-ENC:Array>
+    <SOAP-ENC:Array id="ref-6" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/lab4/lab4%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull" SOAP-ENC:arrayType="a1:Person[0]">
+    </SOAP-ENC:Array>
+    <a1:Article id="ref-7" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/lab4/lab4%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+      <_x003C_Author_x003E_k__BackingField href="#ref-10" />
+      <_x003C_Title_x003E_k__BackingField id="ref-11">New Article</_x003C_Title_x003E_k__BackingField>
+      <_x003C_Rating_x003E_k__BackingField>7.7999999999999998</_x003C_Rating_x003E_k__BackingField>
+    </a1:Article>
+    <a1:Article id="ref-8" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/lab4/lab4%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+      <_x003C_Author_x003E_k__BackingField href="#ref-12" />
+      <_x003C_Title_x003E_k__BackingField id="ref-13">New Title</_x003C_Title_x003E_k__BackingField>
+      <_x003C_Rating_x003E_k__BackingField>7</_x003C_Rating_x003E_k__BackingField>
+    </a1:Article>
+    <a1:Article id="ref-9" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/lab4/lab4%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+      <_x003C_Author_x003E_k__BackingField href="#ref-14" />
+      <_x003C_Title_x003E_k__BackingField id="ref-15">National Geographic</_x003C_Title_x003E_k__BackingField>
+      <_x003C_Rating_x003E_k__BackingField>9</_x003C_Rating_x003E_k__BackingField>
+    </a1:Article>
+    <a1:Person id="ref-10" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/lab4/lab4%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+      <firstName id="ref-16">John</firstName>
+      <secondName id="ref-17">Fishman</secondName>
+      <dateOfBirthday>0001-01-01T00:00:00.0000000+02:00</dateOfBirthday>
+    </a1:Person>
+    <a1:Person id="ref-12" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/lab4/lab4%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+      <firstName id="ref-18">Alex</firstName>
+      <secondName id="ref-19">Bahno</secondName>
+      <dateOfBirthday>2005-07-31T00:00:00.0000000+03:00</dateOfBirthday>
+    </a1:Person>
+    <a1:Person id="ref-14" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/lab4/lab4%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+      <firstName id="ref-20">Mike</firstName>
+      <secondName id="ref-21">Gibs</secondName>
+      <dateOfBirthday>1999-04-25T00:00:00.0000000+03:00</dateOfBirthday>
+    </a1:Person>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

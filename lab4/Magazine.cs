@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Soap;
 using System.ComponentModel;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace lab4
 {
+    [Serializable]
     class Magazine : Edition, IRateAndCopy
     {
         private Frequency frequency;
@@ -136,15 +139,141 @@ namespace lab4
             }
         }
 
-        public override object DeepCopy()
+        public new Magazine DeepCopy()
         {
-            Magazine temp = (Magazine)MemberwiseClone();
-            temp.Name = Name;
-            temp.ReleaseDate = ReleaseDate;
-            temp.FrequencyOfRelease = FrequencyOfRelease;
-            temp.Articles = Articles.Select(article => new Article(article.Author, article.Title, article.Rating)).ToList();
-            temp.Authors = Authors.Select(author => new Person(author.FirstName, author.SecondName, author.DateOfBirthday)).ToList();
-            return temp;
+            using (MemoryStream memoryStream = new MemoryStream())
+            {
+                SoapFormatter formatter = new SoapFormatter();
+                formatter.Serialize(memoryStream, this);
+                memoryStream.Seek(0, SeekOrigin.Begin);
+                return (Magazine)formatter.Deserialize(memoryStream);
+            }
+        }
+
+        public bool Save(string filename)
+        {
+            try
+            {
+                using (FileStream fileStream = new FileStream(filename, FileMode.Create))
+                {
+                    SoapFormatter formatter = new SoapFormatter();
+                    formatter.Serialize(fileStream, this);
+                }
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+         public bool Load(string filename)
+        {
+            try
+            {
+                using (FileStream fileStream = new FileStream(filename, FileMode.Open))
+                {
+                    SoapFormatter formatter = new SoapFormatter();
+                    var loadedObject = (Magazine)formatter.Deserialize(fileStream);
+                    this.Name = loadedObject.Name;
+                    this.ReleaseDate = loadedObject.ReleaseDate;
+                    this.Amount = loadedObject.Amount;
+                    this.FrequencyOfRelease = loadedObject.FrequencyOfRelease;
+                    this.Articles = loadedObject.Articles;
+                    this.Authors = loadedObject.Authors;
+                }
+                return true;
+            }
+            catch (Exception e)
+            {
+                System.Console.WriteLine(e.Message);
+                return false;
+            }
+        }
+
+        public static bool Save(string filename, Magazine obj)
+        {
+            try
+            {
+                using (FileStream fileStream = new FileStream(filename, FileMode.Create))
+                {
+                    SoapFormatter formatter = new SoapFormatter();
+                    formatter.Serialize(fileStream, obj);
+                }
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public static bool Load(string filename, Magazine obj)
+        {
+            try
+            {
+                using (FileStream fileStream = new FileStream(filename, FileMode.Open))
+                {
+                    SoapFormatter formatter = new SoapFormatter();
+                    var loadedObject = (Magazine)formatter.Deserialize(fileStream);
+                    obj.Name = loadedObject.Name;
+                    obj.ReleaseDate = loadedObject.ReleaseDate;
+                    obj.Amount = loadedObject.Amount;
+                    obj.FrequencyOfRelease = loadedObject.FrequencyOfRelease;
+                    obj.Articles = loadedObject.Articles;
+                    obj.Authors = loadedObject.Authors;
+                }
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool AddFromConsole()
+        {
+            try
+            {
+                Console.WriteLine("Enter data in next way: Title, Name of Author, Date of Birthday(yyyy-mm-dd), Rating of Article");
+                string input = Console.ReadLine();
+
+                if (string.IsNullOrEmpty(input))
+                {
+                    Console.WriteLine("Error: You enter empty data.");
+                    return false;
+                }
+
+                string[] inputParts = input.Split(',');
+
+                if (inputParts.Length != 4)
+                {
+                    Console.WriteLine("Error: Invalid format of data.");
+                    return false;
+                }
+
+                string articleTitle = inputParts[0].Trim();
+                string authorName = inputParts[1].Trim();
+                string authorAge = inputParts[2].Trim();
+                double articleRating = double.Parse(inputParts[3].Trim());
+
+                int year = int.Parse(authorAge.Split('-')[0]);
+                int month = int.Parse(authorAge.Split('-')[1]);
+                int day = int.Parse(authorAge.Split('-')[2]);
+
+                Person author = new Person(authorName.Split(' ')[0], authorName.Split(' ')[1], new DateTime(year, month, day));
+                Article newArticle = new Article(author, articleTitle, articleRating);
+
+                Articles.Add(newArticle);
+
+                Console.WriteLine("Article was added.");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                return false;
+            }
         }
 
         public void AddArticles(params Article[] listOfArticles)

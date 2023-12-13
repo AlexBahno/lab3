@@ -1,0 +1,17 @@
+D:\Study\2 Курс\ПППІ\lab2\lab4\lab4\bin\x64\Debug\net5.0\lab4.exe
+D:\Study\2 Курс\ПППІ\lab2\lab4\lab4\bin\x64\Debug\net5.0\lab4.deps.json
+D:\Study\2 Курс\ПППІ\lab2\lab4\lab4\bin\x64\Debug\net5.0\lab4.runtimeconfig.json
+D:\Study\2 Курс\ПППІ\lab2\lab4\lab4\bin\x64\Debug\net5.0\lab4.runtimeconfig.dev.json
+D:\Study\2 Курс\ПППІ\lab2\lab4\lab4\bin\x64\Debug\net5.0\lab4.dll
+D:\Study\2 Курс\ПППІ\lab2\lab4\lab4\bin\x64\Debug\net5.0\ref\lab4.dll
+D:\Study\2 Курс\ПППІ\lab2\lab4\lab4\bin\x64\Debug\net5.0\lab4.pdb
+D:\Study\2 Курс\ПППІ\lab2\lab4\lab4\bin\x64\Debug\net5.0\System.Runtime.Serialization.Formatters.Soap.dll
+D:\Study\2 Курс\ПППІ\lab2\lab4\lab4\obj\x64\Debug\net5.0\lab4.GeneratedMSBuildEditorConfig.editorconfig
+D:\Study\2 Курс\ПППІ\lab2\lab4\lab4\obj\x64\Debug\net5.0\lab4.AssemblyInfoInputs.cache
+D:\Study\2 Курс\ПППІ\lab2\lab4\lab4\obj\x64\Debug\net5.0\lab4.AssemblyInfo.cs
+D:\Study\2 Курс\ПППІ\lab2\lab4\lab4\obj\x64\Debug\net5.0\lab4.csproj.CoreCompileInputs.cache
+D:\Study\2 Курс\ПППІ\lab2\lab4\lab4\obj\x64\Debug\net5.0\lab4.csproj.CopyComplete
+D:\Study\2 Курс\ПППІ\lab2\lab4\lab4\obj\x64\Debug\net5.0\lab4.dll
+D:\Study\2 Курс\ПППІ\lab2\lab4\lab4\obj\x64\Debug\net5.0\ref\lab4.dll
+D:\Study\2 Курс\ПППІ\lab2\lab4\lab4\obj\x64\Debug\net5.0\lab4.pdb
+D:\Study\2 Курс\ПППІ\lab2\lab4\lab4\obj\x64\Debug\net5.0\lab4.genruntimeconfig.cache

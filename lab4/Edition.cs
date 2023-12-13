@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace lab4
 {
+    [Serializable]
     class Edition : IComparable<Edition>, IComparer<Edition>, INotifyPropertyChanged
     {
         protected string name;

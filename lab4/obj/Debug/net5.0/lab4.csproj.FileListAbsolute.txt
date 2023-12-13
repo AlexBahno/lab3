@@ -46,3 +46,5 @@ D:\Study\2 Курс\ПППІ\lab2\lab4\lab4\obj\Debug\net5.0\lab4.dll
 D:\Study\2 Курс\ПППІ\lab2\lab4\lab4\obj\Debug\net5.0\ref\lab4.dll
 D:\Study\2 Курс\ПППІ\lab2\lab4\lab4\obj\Debug\net5.0\lab4.pdb
 D:\Study\2 Курс\ПППІ\lab2\lab4\lab4\obj\Debug\net5.0\lab4.genruntimeconfig.cache
+D:\Study\2 Курс\ПППІ\lab2\lab4\lab4\obj\Debug\net5.0\lab4.csproj.CopyComplete
+D:\Study\2 Курс\ПППІ\lab2\lab4\lab4\bin\Debug\net5.0\SoapFormatter.dll

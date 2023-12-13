@@ -1,0 +1,5 @@
+D:\Study\2 Курс\ПППІ\lab2\lab4\lab4\obj\Debug\net4.0\lab4.csproj.AssemblyReference.cache
+D:\Study\2 Курс\ПППІ\lab2\lab4\lab4\obj\Debug\net4.0\lab4.GeneratedMSBuildEditorConfig.editorconfig
+D:\Study\2 Курс\ПППІ\lab2\lab4\lab4\obj\Debug\net4.0\lab4.AssemblyInfoInputs.cache
+D:\Study\2 Курс\ПППІ\lab2\lab4\lab4\obj\Debug\net4.0\lab4.AssemblyInfo.cs
+D:\Study\2 Курс\ПППІ\lab2\lab4\lab4\obj\Debug\net4.0\lab4.csproj.CoreCompileInputs.cache
